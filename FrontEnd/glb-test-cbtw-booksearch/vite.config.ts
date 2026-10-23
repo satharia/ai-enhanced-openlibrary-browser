@@ -17,10 +17,13 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       // Dev only: same-origin /api calls are forwarded to the backend, so no CORS setup is needed.
+      // Target the HTTPS port: the API redirects HTTP to HTTPS, and the browser would follow that
+      // redirect cross-origin. `secure: false` accepts the ASP.NET dev certificate.
       proxy: {
         '/api': {
           target: env.VITE_API_BASE_URL,
           changeOrigin: true,
+          secure: false,
         },
       },
     },
