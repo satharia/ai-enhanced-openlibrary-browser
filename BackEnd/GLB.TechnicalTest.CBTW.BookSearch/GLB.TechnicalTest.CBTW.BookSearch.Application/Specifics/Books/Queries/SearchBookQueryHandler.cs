@@ -1,5 +1,7 @@
 ﻿using GLB.TechnicalTest.CBTW.BookSearch.Application.Common.Interfaces;
 using GLB.TechnicalTest.CBTW.BookSearch.Application.Common.Messaging;
+using GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Books.Models;
+using GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Rankers.Models;
 using GLB.TechnicalTest.CBTW.BookSearch.Domain.Books;
 using GLB.TechnicalTest.CBTW.BookSearch.Domain.Common.Exceptions.Domain;
 using Microsoft.Extensions.Logging;
@@ -9,6 +11,7 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Books.Queries
     public sealed class SearchBookQueryHandler(
         ISearchIntentExtractor searchIntentExtractor,
         IBookCatalog bookCatalog,
+        IResultRanker resultRanker,
         ILogger<SearchBookQueryHandler> logger)
         : IRequestHandler<SearchBookQuery, SearchBookResult>
     {
@@ -43,7 +46,20 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Books.Queries
                 usedFallback = true;
             }
 
-            return new SearchBookResult(criteria!, false, books);
+            Ranking ranking;
+            try
+            {
+                ranking = await resultRanker.RankAsync(criteria!, books.Items, cancellationToken);
+            }
+            catch (Exception ex) when (ex is not OperationCanceledException)
+            {
+                logger.LogWarning(ex, "Ranking failed; using the deterministic tiers");
+                ranking = MatchRanker.Rank(criteria!, books.Items);
+            }
+
+            books = books with { Items = ranking.Books };
+
+            return new SearchBookResult(criteria!, usedFallback, ranking.Tier, ranking.Summary, books);
         }
     }
 }

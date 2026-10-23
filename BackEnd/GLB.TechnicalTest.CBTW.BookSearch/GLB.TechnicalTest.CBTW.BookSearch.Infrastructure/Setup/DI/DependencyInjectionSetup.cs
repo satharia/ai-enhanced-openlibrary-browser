@@ -45,6 +45,7 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.Setup.DI
 
             services.AddScoped<IGeminiAIClient, GeminiAIClient>();
             services.AddScoped<ISearchIntentExtractor, GeminiAISearchIntentExtractor>();
+            services.AddScoped<IResultRanker, GeminiAIResultRanker>();
 
             return services;
         }

@@ -8,5 +8,9 @@
         int? EditionCount,
         string? CoverUrl,
         string? EditionId = null
-        );
+        )
+    {
+        public bool IsPrimary { get; init; }
+        public string? Explanation { get; init; }
+    }
 }
