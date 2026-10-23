@@ -11,7 +11,7 @@ AI-enhanced Open Library browser: a .NET API that interprets a free-text search 
 - **Cache.** I left caching for the end. My strategy was to handle it as a behaviour in the CQRS pipeline; I did not have the time to implement and test it properly, so I left it out, a critical failure in my time management.
 - **Hand-crafted front end.** I wanted to build a beautifully animated front-end experience, something I would do with more time and calm.
 - **Unit testing.** I wanted to write unit tests for each edge case of the deterministic ranker. My approach was to build mocks with hard-to-handle responses to ensure the ranker behaved correctly, especially when Open Library's search results list multiple authors.
-- **Author works page**: I wanted to add a page with all of an Author's works by cliking their name on the results list, this would've used the Author endpoint provided by OpenLibrary to show all works by an autor ranked by the number of editions each work has (a way to infer the popularity of a book, popular books tend to have more editions and publication dates)
+- **Author works page**: I wanted to add a page with all of an Author's works by clicking their name on the results list, this would've used the Author endpoint provided by OpenLibrary to show all works by an autor ranked by the number of editions each work has (a way to infer the popularity of a book, popular books tend to have more editions and publication dates)
 - **All  editions of a book**: I wanted to add another details view by clicking on a button I would've added below the book name to see all editions of a book with their covers
 
 ## Issues during the test
