@@ -6,6 +6,21 @@ AI-enhanced Open Library browser: a .NET API that interprets a free-text search 
 
 - **Gemini LLM usage.** There are two places I identified as the most valuable in this test to apply the virtues of an LLM: first, to interpret the user's intent in their free-text search; second, to rank the Open Library results that did not fall into one of the deterministic ranking rules.
 
+## Things I would do with more time
+
+- **Cache.** I left caching for the end. My strategy was to handle it as a behaviour in the CQRS pipeline; I did not have the time to implement and test it properly, so I left it out, a critical failure in my time management.
+- **Hand-crafted front end.** I wanted to build a beautifully animated front-end experience, something I would do with more time and calm.
+- **Unit testing.** I wanted to write unit tests for each edge case of the deterministic ranker. My approach was to build mocks with hard-to-handle responses to ensure the ranker behaved correctly, especially when Open Library's search results list multiple authors.
+- **Author works page**: I wanted to add a page with all of an Author's works by cliking their name on the results list, this would've used the Author endpoint provided by OpenLibrary to show all works by an autor ranked by the number of editions each work has (a way to infer the popularity of a book, popular books tend to have more editions and publication dates)
+- **All  editions of a book**: I wanted to add another details view by clicking on a button I would've added below the book name to see all editions of a book with their covers
+
+## Issues during the test
+
+- I wanted to showcase my knowledge of clean architecture and the CQRS pattern, so I decided to write the solution by hand, something I ended up regretting, as the boilerplate took longer than I hoped.
+- I spent a long time designing the solution and understanding the data set Open Library provides. The ranker was a little rushed and I did not implement the test suite I would have liked to.
+- I did not put as much time into the front end as I wanted. It too was rushed, and I resorted to Claude Code to write that code, something I did not want to do for this test.
+- Debugging took me a long time, and I resorted to Claude Code to find errors in the ranker at the end, something I did not want to do for this test.
+
 ## Setup
 
 - **Redis (skipped).** A Docker Compose file is included to create the Redis cache container, but the cache was not integrated due to time constraints, a failure on my part.
@@ -64,16 +79,3 @@ Requirements: Node 22.18+ or 24.12+.
    ```
 
    Open `http://localhost:5173`, type a title, an author, or a description, and press Enter.
-
-## Things I would do with more time
-
-- **Cache.** I left caching for the end. My strategy was to handle it as a behaviour in the CQRS pipeline; I did not have the time to implement and test it properly, so I left it out, a critical failure in my time management.
-- **Hand-crafted front end.** I wanted to build a beautifully animated front-end experience, something I would do with more time and calm.
-- **Unit testing.** I wanted to write unit tests for each edge case of the deterministic ranker. My approach was to build mocks with hard-to-handle responses to ensure the ranker behaved correctly, especially when Open Library's search results list multiple authors.
-
-## Issues during the test
-
-- I wanted to showcase my knowledge of clean architecture and the CQRS pattern, so I decided to write the solution by hand, something I ended up regretting, as the boilerplate took longer than I hoped.
-- I spent a long time designing the solution and understanding the data set Open Library provides. The ranker was a little rushed and I did not implement the test suite I would have liked to.
-- I did not put as much time into the front end as I wanted. It too was rushed, and I resorted to Claude Code to write that code, something I did not want to do for this test.
-- Debugging took me a long time, and I resorted to Claude Code to find errors in the ranker at the end, something I did not want to do for this test.
