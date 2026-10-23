@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.GenAI" Version="1.27.0" />
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="10.11.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="10.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GLB.TechnicalTest.CBTW.BookSearch.Application\GLB.TechnicalTest.CBTW.BookSearch.Application.csproj" />
     <ProjectReference Include="..\GLB.TechnicalTest.CBTW.BookSearch.Domain\GLB.TechnicalTest.CBTW.BookSearch.Domain.csproj" />
   </ItemGroup>

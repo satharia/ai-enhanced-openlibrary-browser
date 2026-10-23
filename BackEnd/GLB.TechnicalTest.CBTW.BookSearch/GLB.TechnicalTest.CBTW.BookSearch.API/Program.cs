@@ -1,5 +1,6 @@
 
 using GLB.TechnicalTest.CBTW.BookSearch.Application.Setup;
+using GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.Setup.DI;
 
 namespace GLB.TechnicalTest.CBTW.BookSearch.API
 {
@@ -17,6 +18,7 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.API
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddApplicationSetup();
+            builder.Services.AddInfrastructureSetup(builder.Configuration);
 
             var app = builder.Build();
 
