@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="GLB.TechnicalTest.CBTW.BookSearch.API/GLB.TechnicalTest.CBTW.BookSearch.API.csproj" />
+  <Project Path="GLB.TechnicalTest.CBTW.BookSearch.Application/GLB.TechnicalTest.CBTW.BookSearch.Application.csproj" />
+  <Project Path="GLB.TechnicalTest.CBTW.BookSearch.Domain/GLB.TechnicalTest.CBTW.BookSearch.Domain.csproj" />
+  <Project Path="GLB.TechnicalTest.CBTW.BookSearch.Infrastructure/GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.csproj" />
+</Solution>
