@@ -1,4 +1,6 @@
 
+using GLB.TechnicalTest.CBTW.BookSearch.Application.Setup;
+
 namespace GLB.TechnicalTest.CBTW.BookSearch.API
 {
     public class Program
@@ -13,6 +15,8 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddApplicationSetup();
 
             var app = builder.Build();
 
