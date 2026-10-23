@@ -14,11 +14,10 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI
               Any title words, genre, subject, era or description should be considered "book" descriptors.
             - title: the book's title or parts of it, users can sometimes provide only the begining of the whole book's title. Keep every word that seems to belong
               to a title together ("harry potter stone" and "harry potter stone 3d book" are different works in OpenLibrary's catalog)
-            - author: the author's name, if mentioned (must also be set when intent is identified as "author"). Users can also provide the name of a contributor
-              of the book they want to find.
+            - author: the author's name, only when it is complete enough to identify a person (a surname or a full name, eg. "rowling", "jk rowling"). A fragment such as "jk row" is NOT an author, leave it in the freeText field.
             - subject: a genre or topic such as "science fiction", "cooking", "roman history".
             - publisher: only if mentioned explicitly.
-            - language: Three letter code, infer it from the language used by the user to write their message.
+            - language: Three letter code, only when the user explicitly names a language or asks for books in a specific one. Never infer it from the language the user writes in. Leave it otherwise.
             - publishedFrom and publishedTo: set it as integer years, infer it from messages from the user like these (eg. "from the 90" means 1990 to 1999,
               "before 2000" means from null to 1999, and so on)
             - freeText: any text or words that could not be classified to be placed in a field from the jsonSchema I provide.

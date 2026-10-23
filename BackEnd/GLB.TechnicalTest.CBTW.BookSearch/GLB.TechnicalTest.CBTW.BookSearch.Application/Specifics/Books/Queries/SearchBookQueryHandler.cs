@@ -8,6 +8,7 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Books.Queries
 {
     public sealed class SearchBookQueryHandler(
         ISearchIntentExtractor searchIntentExtractor,
+        IBookCatalog bookCatalog,
         ILogger<SearchBookQueryHandler> logger)
         : IRequestHandler<SearchBookQuery, SearchBookResult>
     {
@@ -34,9 +35,15 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Books.Queries
                 criteria = BookSearchCriteria.FreeTextCriteria(request.FreeText);
             }
 
-            // ToDo: Use criteria to query books from OpenLibrary output port
+            var books = await bookCatalog.SearchWorksAsync(criteria!, request.Page, request.PageSize, cancellationToken);
+            if (books.Items.Count == 0 && !usedFallback)
+            {
+                logger.LogWarning("Structured search returned empty; retrying as free text");
+                books = await bookCatalog.SearchWorksAsync(BookSearchCriteria.FreeTextCriteria(request.FreeText), request.Page, request.PageSize, cancellationToken);
+                usedFallback = true;
+            }
 
-            return new SearchBookResult(null, false, null);
+            return new SearchBookResult(criteria!, false, books);
         }
     }
 }
