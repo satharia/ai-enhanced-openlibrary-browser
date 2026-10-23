@@ -1,0 +1,6 @@
+@GLB.TechnicalTest.CBTW.BookSearch.API_HostAddress = http://localhost:5138
+
+GET {{GLB.TechnicalTest.CBTW.BookSearch.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

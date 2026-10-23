@@ -1,0 +1,318 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram name="Architecture" id="TCm8T0Vh_K85L-kwZhSL">
+    <mxGraphModel dx="2554" dy="894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_r60NRKbPl07b_EbcvQj-19" edge="1" parent="1" source="Kkv0WtOt56TGRnbec3Yk-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fillColor=#d5e8d4;strokeColor=#82b366;" target="_r60NRKbPl07b_EbcvQj-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-21" edge="1" parent="1" source="Kkv0WtOt56TGRnbec3Yk-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fillColor=#d5e8d4;strokeColor=#82b366;" target="_r60NRKbPl07b_EbcvQj-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kkv0WtOt56TGRnbec3Yk-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="API - Server&lt;div&gt;.NET 8&lt;/div&gt;&lt;div&gt;ECS Container&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="120" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-17" edge="1" parent="1" source="Kkv0WtOt56TGRnbec3Yk-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fillColor=#ffe6cc;strokeColor=#d79b00;" target="_r60NRKbPl07b_EbcvQj-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kkv0WtOt56TGRnbec3Yk-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="SPA - Client&lt;div&gt;VueJS&lt;/div&gt;&lt;div&gt;ECS Container&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="-235" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-13" edge="1" parent="1" source="Kkv0WtOt56TGRnbec3Yk-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="_r60NRKbPl07b_EbcvQj-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kkv0WtOt56TGRnbec3Yk-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Web Browser&lt;div&gt;End User&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="-800" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Gemini Developer API&lt;div&gt;HTTPS&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="120" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="OpenLibrary API&lt;div&gt;HTTPS&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="-120" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-11" parent="1" style="swimlane;startSize=20;" value="AWS Cloud" vertex="1">
+          <mxGeometry height="330" width="1000" x="-610" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-12" parent="_r60NRKbPl07b_EbcvQj-11" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Aplication Load Balancer&lt;div&gt;AWS&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="40" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-20" parent="_r60NRKbPl07b_EbcvQj-11" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="NAT Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="610" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-4" parent="_r60NRKbPl07b_EbcvQj-11" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Redis Cache&lt;div&gt;AWS ElastiCache&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="810" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-16" edge="1" parent="1" source="_r60NRKbPl07b_EbcvQj-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="Kkv0WtOt56TGRnbec3Yk-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-18" edge="1" parent="1" source="_r60NRKbPl07b_EbcvQj-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fillColor=#ffe6cc;strokeColor=#d79b00;" target="Kkv0WtOt56TGRnbec3Yk-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-470" y="540" />
+              <mxPoint x="-60" y="540" />
+              <mxPoint x="-60" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-22" edge="1" parent="1" source="_r60NRKbPl07b_EbcvQj-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fillColor=#d5e8d4;strokeColor=#82b366;" target="_r60NRKbPl07b_EbcvQj-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_r60NRKbPl07b_EbcvQj-23" edge="1" parent="1" source="_r60NRKbPl07b_EbcvQj-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fillColor=#d5e8d4;strokeColor=#82b366;" target="_r60NRKbPl07b_EbcvQj-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ArTxRcc9auQJ2JUDzPPX-1" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;&lt;b&gt;CBTW&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Technical Test&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;LLM Enhanced Open Library Search&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="200" x="-810" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fA3Dz_iTLxXNbi8nKofo-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Architecture Diagram&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="200" x="-560" y="65" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="okTwL9K7LBWNoA-EE5--" name="Main Logic Flow">
+    <mxGraphModel dx="2049" dy="1075" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pEEubyG2EgXKSioOIYiT-29" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="START" vertex="1">
+          <mxGeometry height="80" width="80" x="80" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-30" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="End user issues a search request in the form of free text" vertex="1">
+          <mxGeometry height="80" width="120" x="240" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-31" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Input adapter (API controller) receives the free text sent by the end user in a DTO" vertex="1">
+          <mxGeometry height="80" width="120" x="440" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-65" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="UseCase (ISender) CQRS pattern sends the request to the appropriate handler" vertex="1">
+          <mxGeometry height="80" width="120" x="640" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-33" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Handler (UseCase) calls LLMSearch output port to process the free text" vertex="1">
+          <mxGeometry height="80" width="120" x="840" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-34" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="LLMSearch output adapter interprets the free text, identifying the intent, when author name is detected, it must be explictly declared fore the Handler (UseCase) to know" vertex="1">
+          <mxGeometry height="80" width="220" x="1000" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-55" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="LLMSearch output adapter returns the interpretation of the free text in a domain DTO" vertex="1">
+          <mxGeometry height="80" width="120" x="240" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-54" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Handler (UseCase) uses LLMSearch result as input for OpenLibrary output port" vertex="1">
+          <mxGeometry height="80" width="120" x="440" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-37" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="OpenLibrary output adapter uses input to build Open library API request and issue Open Library search request" vertex="1">
+          <mxGeometry height="80" width="140" x="835" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-60" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1185" y="550" />
+              <mxPoint x="1185" y="760" />
+              <mxPoint x="300" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="OpenLibrary output adapter returns top 20 results to handler" vertex="1">
+          <mxGeometry height="80" width="120" x="1045" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-61" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Handler (UseCase) uses OpenLibrary results to pass them to LLMRanker port" vertex="1">
+          <mxGeometry height="80" width="120" x="240" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-40" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="LLMRanker output adapter interprets OpenLibrary results to find the best match for what the user was looking for, explaining how it matched" vertex="1">
+          <mxGeometry height="80" width="200" x="480" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-28" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="LLMRanker output adapter uses a matching hierarchy to return specific results from the OpenLibrary response in a specific order" vertex="1">
+          <mxGeometry height="80" width="160" x="800" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-16" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-15" value="Strongest match, return this single result as main, others as possible matches, explain specific match">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-18" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-17" value="Otherwise">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-14" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="Exact-normalized title + primary author match" vertex="1">
+          <mxGeometry height="120" width="120" x="240" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-42" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Handler (UseCase) uses LLMRanker port results to build the final response" vertex="1">
+          <mxGeometry height="80" width="120" x="240" y="1310" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-20" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-15" value="Lower rank match, return this single result as main, others as possible matches, explain selection with specific contributor matched">
+          <mxGeometry relative="1" x="-0.1257" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="1280" />
+              <mxPoint x="330" y="1280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-22" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-19" value="Otherwise">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-17" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="Exact-normalized title + contributor-only author match" vertex="1">
+          <mxGeometry height="120" width="120" x="840" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-21" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-15" value="Lowest rank match, explain assumptions made to choose this candidate, others as possible matches">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-24" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-23" value="Otherwise">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-19" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="Near-match title + author match (candidate)" vertex="1">
+          <mxGeometry height="120" width="120" x="1110" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-25" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-15" value="Detected search was for an author, return the already queried works of that author ordered by works with most editions">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-51" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-26" value="Otherwise">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-23" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="Author-only fallback (author endpoint already used)" vertex="1">
+          <mxGeometry height="120" width="140" x="1300" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-27" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-15" value="Return a list of the 5 top candidates with explanation of why they were considered candidates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-26" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="No clear winner-match" vertex="1">
+          <mxGeometry height="120" width="120" x="1520" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-44" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Handler (UseCase) gets the images URIs to place in the final result" vertex="1">
+          <mxGeometry height="80" width="160" x="220" y="1470" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-46" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Handler (UseCase)&amp;nbsp;returns final results to input adapter (controller)" vertex="1">
+          <mxGeometry height="80" width="120" x="460" y="1470" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-48" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-45" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Input adapter (Controller) returns results to end user" vertex="1">
+          <mxGeometry height="80" width="120" x="660" y="1470" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-47" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" value="END" vertex="1">
+          <mxGeometry height="80" width="80" x="860" y="1470" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-80" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-49" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;NOTE&lt;/h1&gt;&lt;p&gt;Open Library can return the list of contributors alongside the name of the main author in the &quot;author_name&quot; field, in these cases our LLM must identify which is which and take it into account for ranking candidates and explaining ordering of the results&lt;/p&gt;" vertex="1">
+          <mxGeometry height="200" width="200" x="1360" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-50" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;DILEMMA&lt;/h1&gt;&lt;p&gt;LLM is called twice, once to build the request with the identified intent, and again to rank the Open Library results, in the long run this could prove to be more expensive than issuing multiple requests to the data source (depending on the data source), a cost analysis per case is required.&amp;nbsp;&lt;/p&gt;&lt;p&gt;In hierarchy tiers 1, 2 and 4 the second LLM call is not necessary.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="240" width="200" x="1360" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-56" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-9" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-58" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-57" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-53" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="The sole intent of the user&#39;s input was an Author&#39;s name?" vertex="1">
+          <mxGeometry height="120" width="120" x="638" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-59" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="OpenLibrary output adapter uses input to build Open library API request and issue Open Library author request" vertex="1">
+          <mxGeometry height="80" width="140" x="835" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-62" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;align=left;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;INPUT&lt;/h1&gt;&lt;p&gt;Free Text&lt;/p&gt;" vertex="1">
+          <mxGeometry height="200" width="180" x="160" y="1630" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-63" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;OUTPUT&lt;/h1&gt;&lt;p&gt;JSON Array of possible matches:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;title: string&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;authors: string&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;first_publish_year: date string&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;olids: object&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;author_olid: string&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;work_olid: string&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;edition_olid: string&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;cover_image_uri: string&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;explanation: string&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="400" y="1630" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-68" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Input Normalization is run" vertex="1">
+          <mxGeometry height="80" width="120" x="640" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-69" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-66" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Cache behavior is run" vertex="1">
+          <mxGeometry height="80" width="120" x="640" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-70" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-5" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-76" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-72">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-67" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="Is normalized input result cached?" vertex="1">
+          <mxGeometry height="120" width="120" x="840" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-71" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Handler returns final results to input adapter (controller)" vertex="1">
+          <mxGeometry height="80" width="120" x="1040" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-73" edge="1" parent="1" source="pEEubyG2EgXKSioOIYiT-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="pEEubyG2EgXKSioOIYiT-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-74" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Input adapter returns results to end user" vertex="1">
+          <mxGeometry height="80" width="120" x="1240" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-75" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" value="END" vertex="1">
+          <mxGeometry height="80" width="80" x="1440" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-77" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;LLM Main Value&lt;/h1&gt;&lt;p&gt;The most difficult requirement in this test is to differentiate the main author from contributors in the &quot;author_name&quot; field, here is where the LLM shines the most, as it can access data outside of OpenLibrary (depending on the execution environment) to determine which is which&lt;/p&gt;" vertex="1">
+          <mxGeometry height="200" width="200" x="1360" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="pEEubyG2EgXKSioOIYiT-79" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;&lt;b&gt;CBTW&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Technical Test&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;LLM Enhanced Open Library Search&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="200" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="N0NHKmblR0QYioy3WrR1-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Main Logic Flow Diagram&lt;/font&gt;" vertex="1">
+          <mxGeometry height="220" width="200" x="280" y="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
