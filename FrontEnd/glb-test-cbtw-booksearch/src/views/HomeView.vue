@@ -1,42 +1,66 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import BookList from '@/components/BookList.vue'
 import SearchBar from '@/components/SearchBar.vue'
-import BookResults from '@/components/BookResults.vue'
-import { searchBooks, type Book } from '@/api/booksApi'
+import { searchBooks } from '@/api/booksApi'
+import { useRequest } from '@/composables/useRequest'
 
-const books = ref<Book[]>([])
-const loading = ref(false)
-const error = ref<string | null>(null)
-const searched = ref(false)
+const route = useRoute()
+const router = useRouter()
 
-let inFlight: AbortController | null = null
+// The search text lives in the URL (?q=...) so going back from an author or editions page shows the same results
+const searchText = computed(() => (typeof route.query.q === 'string' ? route.query.q : ''))
 
-async function search(text: string) {
-  inFlight?.abort()
-  inFlight = new AbortController()
+const {
+  data: searchResult,
+  isLoading,
+  errorMessage,
+  run: runSearch,
+} = useRequest((signal) => searchBooks(searchText.value, signal))
 
-  loading.value = true
-  error.value = null
+watch(
+  searchText,
+  (newSearchText) => {
+    if (newSearchText) runSearch()
+  },
+  { immediate: true },
+)
 
-  try {
-    const { books: page, ...debug } = await searchBooks(text, inFlight.signal)
-    books.value = page.items
-    searched.value = true
-    console.debug('search', text, debug)
-  } catch (e) {
-    if (e instanceof DOMException && e.name === 'AbortError') return
-    error.value = e instanceof Error ? e.message : 'Search failed'
-  } finally {
-    loading.value = false
+function search(newSearchText: string) {
+  // Searching the same text again does not change the URL, so it has to run explicitly
+  if (newSearchText === searchText.value) {
+    runSearch()
+  } else {
+    router.push({ name: 'home', query: { q: newSearchText } })
   }
 }
 </script>
 
 <template>
   <main class="home">
-    <h1>Find a book</h1>
-    <SearchBar :loading="loading" @search="search" />
-    <BookResults :books="books" :loading="loading" :error="error" :searched="searched" />
+    <header class="hero">
+      <h1>Find a book</h1>
+      <p class="subtitle">
+        Type a title, an author, or describe the book you have in mind. Gemini reads what you meant,
+        Open Library finds the books.
+      </p>
+    </header>
+
+    <SearchBar :initial-text="searchText" :loading="isLoading" @search="search" />
+
+    <Transition name="fade">
+      <p v-if="searchResult && !isLoading && !errorMessage" class="summary">
+        {{ searchResult.summary }}
+      </p>
+    </Transition>
+
+    <BookList
+      :books="searchResult?.books.items ?? []"
+      :loading="isLoading"
+      :error-message="errorMessage"
+      :empty-message="searchResult ? 'No books found. Try fewer words, or just the title.' : null"
+    />
   </main>
 </template>
 
@@ -47,9 +71,19 @@ async function search(text: string) {
   gap: 1.5rem;
 }
 
-h1 {
+.hero h1 {
   margin: 0;
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: 2.25rem;
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  color: var(--p-text-muted-color);
+}
+
+.summary {
+  margin: 0;
+  font-style: italic;
+  color: var(--p-text-muted-color);
 }
 </style>

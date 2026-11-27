@@ -1,34 +1,67 @@
-// Client for GET /api/books/search. Only the fields the UI shows are typed; the response also
-// carries criteria, tier and summary, which are debugging data and stay out of the UI.
+import { getJson, type PagedResult } from './httpClient'
+
+export interface AuthorRef {
+  id: string | null
+  name: string
+}
 
 export interface Book {
   id: string
   title: string
-  authors: { id: string | null; name: string }[]
+  authors: AuthorRef[]
   firstPublishYear: number | null
+  editionCount: number | null
   coverUrl: string | null
   isPrimary: boolean
   explanation: string | null
 }
 
-export interface SearchResponse {
-  books: { items: Book[]; total: number }
-  [debug: string]: unknown
+export interface SearchBooksResult {
+  usedFallback: boolean
+  summary: string
+  books: PagedResult<Book>
 }
 
-// In dev the Vite proxy serves /api from the same origin; a build calls the configured URL.
-const baseUrl = import.meta.env.DEV ? '' : import.meta.env.VITE_API_BASE_URL
+export interface WorkDetails {
+  id: string
+  title: string
+  description: string | null
+  subjects: string[]
+  coverUrl: string | null
+}
 
-export async function searchBooks(
-  searchText: string,
+export interface Edition {
+  id: string
+  title: string | null
+  publishers: string[]
+  publishDate: string | null
+  numberOfPages: number | null
+  isbn13: string | null
+  languages: string[]
+  coverUrl: string | null
+}
+
+export interface BookEditionsResult {
+  work: WorkDetails
+  editions: PagedResult<Edition>
+}
+
+export function searchBooks(searchText: string, signal?: AbortSignal) {
+  const parameters = new URLSearchParams({ searchText })
+
+  return getJson<SearchBooksResult>(`/api/books/search?${parameters}`, signal)
+}
+
+export function getBookEditions(
+  workId: string,
+  page: number,
+  pageSize: number,
   signal?: AbortSignal,
-): Promise<SearchResponse> {
-  const params = new URLSearchParams({ searchText })
-  const response = await fetch(`${baseUrl}/api/books/search?${params}`, { signal })
+) {
+  const parameters = new URLSearchParams({ page: String(page), pageSize: String(pageSize) })
 
-  if (!response.ok) {
-    throw new Error(`Search failed (${response.status})`)
-  }
-
-  return response.json()
+  return getJson<BookEditionsResult>(
+    `/api/books/${encodeURIComponent(workId)}/editions?${parameters}`,
+    signal,
+  )
 }
