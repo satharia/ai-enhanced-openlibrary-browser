@@ -39,7 +39,10 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI
                 dto.PublishedFrom,
                 dto.PublishedTo,
                 dto.FreeText
-                );
+                )
+            {
+                Intent = dto.Intent
+            };
         }
     }
 }

@@ -1,8 +1,10 @@
-﻿namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI.Models
+﻿using GLB.TechnicalTest.CBTW.BookSearch.Domain.Books;
+
+namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI.Models
 {
     internal sealed record ExtractedCriteria
     (
-        IntentKind Intent,
+        SearchIntent Intent,
         string? Title,
         string? Author,
         string? Subject,

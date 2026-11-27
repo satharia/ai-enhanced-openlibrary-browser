@@ -1,14 +1,13 @@
 ﻿using GLB.TechnicalTest.CBTW.BookSearch.Domain.Common.Exceptions.Application;
 using Google.GenAI;
 using Google.GenAI.Types;
-using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Collections.Concurrent;
-using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Schema;
+using System.Text.Json.Serialization;
 
 namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI
 {
@@ -18,15 +17,19 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI
         ILogger<GeminiAIClient> logger
         ) : IGeminiAIClient
     {
-        private static readonly JsonSerializerOptions JsonSerializerOptions = new(JsonSerializerDefaults.Web);
+        // Enums travel as camelCase strings ("books", "author") both in the schema and in the response
+        private static readonly JsonSerializerOptions JsonSerializerOptions = new(JsonSerializerDefaults.Web)
+        {
+            Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
+        };
 
-        private static readonly JsonSchemaExporterOptions SchemaOptions = new()
+        private static readonly JsonSchemaExporterOptions SchemaExporterOptions = new()
         {
             TreatNullObliviousAsNonNullable = true
         };
-        private static readonly ConcurrentDictionary<System.Type, JsonNode> SchemaCache = new();
-        internal static JsonNode SchemaFor(System.Type type) =>
-            SchemaCache.GetOrAdd(type, static T => JsonSerializerOptions.GetJsonSchemaAsNode(T, SchemaOptions));
+
+        // The schema of a response type never changes, so it is only generated once
+        private static readonly ConcurrentDictionary<System.Type, JsonNode> ResponseSchemas = new();
 
         public async Task<T?> IssueGenerationRequestAsync<T>(string systemPrompt, string userText, CancellationToken cancellationToken) where T : class
         {
@@ -34,7 +37,7 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI
             {
                 SystemInstruction = new Content { Parts = [ new Part { Text = systemPrompt } ] },
                 ResponseMimeType = "application/json",
-                ResponseJsonSchema = SchemaOptions,
+                ResponseJsonSchema = GetResponseSchema(typeof(T)),
                 Temperature = 0
             };
 
@@ -53,11 +56,14 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI
 
                 return JsonSerializer.Deserialize<T>(responseText, JsonSerializerOptions);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
                 when (ex is ApiException or HttpRequestException or JsonException)
             {
                 throw new ExternalServiceException("GeminiAI", ex.Message, ex);
             }
         }
+
+        private static JsonNode GetResponseSchema(System.Type responseType) =>
+            ResponseSchemas.GetOrAdd(responseType, type => JsonSerializerOptions.GetJsonSchemaAsNode(type, SchemaExporterOptions));
     }
 }
