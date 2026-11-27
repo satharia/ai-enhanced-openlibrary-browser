@@ -1,4 +1,5 @@
 ﻿using GLB.TechnicalTest.CBTW.BookSearch.Domain.Common.Exceptions.Application;
+using GLB.TechnicalTest.CBTW.BookSearch.Domain.Common.Utils.Http;
 using GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.OpenLibrary.Contracts;
 using Polly.Timeout;
 using System.Net.Http.Json;
@@ -12,9 +13,29 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.OpenLibrary
 
         public async Task<SearchResponse?> SearchAsync(SearchRequest request, CancellationToken cancellationToken)
         {
-            var result = await GetResponseOrNullOnNotFoundAsync<SearchResponse>(request.BuildRequestPathWithParameters(), cancellationToken);
+            return await GetResponseOrNullOnNotFoundAsync<SearchResponse>(request.BuildRequestPathWithParameters(), cancellationToken);
+        }
 
-            return result;
+        public async Task<AuthorRecord?> GetAuthorAsync(string authorId, CancellationToken cancellationToken)
+        {
+            return await GetResponseOrNullOnNotFoundAsync<AuthorRecord>($"authors/{Uri.EscapeDataString(authorId)}.json", cancellationToken);
+        }
+
+        public async Task<WorkRecord?> GetWorkAsync(string workId, CancellationToken cancellationToken)
+        {
+            return await GetResponseOrNullOnNotFoundAsync<WorkRecord>($"works/{Uri.EscapeDataString(workId)}.json", cancellationToken);
+        }
+
+        public async Task<EditionsResponse?> GetWorkEditionsAsync(string workId, int limit, int offset, CancellationToken cancellationToken)
+        {
+            var path = QueryParameterUtils.BuildPathWithQueryParameterString(
+                $"works/{Uri.EscapeDataString(workId)}/editions.json",
+                [
+                    new("limit", limit.ToString()),
+                    new("offset", offset.ToString())
+                ]);
+
+            return await GetResponseOrNullOnNotFoundAsync<EditionsResponse>(path, cancellationToken);
         }
 
         private async Task<T?> GetResponseOrNullOnNotFoundAsync<T>(string path, CancellationToken cancellationToken) where T : class
