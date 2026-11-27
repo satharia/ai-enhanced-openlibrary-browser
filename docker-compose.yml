@@ -1,0 +1,20 @@
+# Redis cache and the API. Run only the cache with `docker compose up redis`.
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  api:
+    build:
+      context: BackEnd/GLB.TechnicalTest.CBTW.BookSearch
+      dockerfile: GLB.TechnicalTest.CBTW.BookSearch.API/Dockerfile
+    ports:
+      - "5138:8080"
+    environment:
+      ConnectionStrings__Redis: redis:6379
+      Gemini__ApiKey: ${GEMINI_API_KEY:-}
+      OpenLibrary__AppName: ${OPENLIBRARY_APP_NAME:-BookSearch/1.0}
+      OpenLibrary__ContactEmail: ${OPENLIBRARY_CONTACT_EMAIL:-}
+    depends_on:
+      - redis

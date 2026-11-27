@@ -15,6 +15,29 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.Setup.DI
         {
             services.AddGeminiAI(configuration);
             services.AddOpenLibrary(configuration);
+            services.AddCache(configuration);
+
+            return services;
+        }
+
+        private static IServiceCollection AddCache(this IServiceCollection services, IConfiguration configuration)
+        {
+            // Redis is used when its connection string is configured (docker-compose.yml starts one on localhost:6379),
+            // otherwise responses are cached in the API's memory
+            var redisConnectionString = configuration.GetConnectionString("Redis");
+
+            if (string.IsNullOrWhiteSpace(redisConnectionString))
+            {
+                services.AddDistributedMemoryCache();
+            }
+            else
+            {
+                services.AddStackExchangeRedisCache(options =>
+                {
+                    options.Configuration = redisConnectionString;
+                    options.InstanceName = "BookSearch:";
+                });
+            }
 
             return services;
         }
