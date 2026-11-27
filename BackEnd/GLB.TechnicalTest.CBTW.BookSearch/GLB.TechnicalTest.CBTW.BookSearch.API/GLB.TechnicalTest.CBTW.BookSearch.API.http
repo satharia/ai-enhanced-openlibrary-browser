@@ -1,6 +1,16 @@
 @GLB.TechnicalTest.CBTW.BookSearch.API_HostAddress = http://localhost:5138
 
-GET {{GLB.TechnicalTest.CBTW.BookSearch.API_HostAddress}}/weatherforecast/
+GET {{GLB.TechnicalTest.CBTW.BookSearch.API_HostAddress}}/api/books/search?searchText=hobbit by tolkien
+Accept: application/json
+
+###
+
+GET {{GLB.TechnicalTest.CBTW.BookSearch.API_HostAddress}}/api/books/OL27482W/editions?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{GLB.TechnicalTest.CBTW.BookSearch.API_HostAddress}}/api/authors/OL26320A/works?page=1&pageSize=10
 Accept: application/json
 
 ###

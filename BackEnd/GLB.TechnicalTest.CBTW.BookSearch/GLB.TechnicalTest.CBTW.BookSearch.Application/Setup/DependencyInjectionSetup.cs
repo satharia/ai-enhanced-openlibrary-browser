@@ -1,4 +1,5 @@
-﻿using GLB.TechnicalTest.CBTW.BookSearch.Application.Common.Messaging;
+﻿using GLB.TechnicalTest.CBTW.BookSearch.Application.Common.Caching;
+using GLB.TechnicalTest.CBTW.BookSearch.Application.Common.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -12,6 +13,7 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Application.Setup
 
             services.AddScoped<ISender, Sender>();
             services.AddRequestHandlersFromAssembly(assembly);
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
 
             return services;
         }

@@ -1,6 +1,7 @@
 ﻿using GLB.TechnicalTest.CBTW.BookSearch.Application.Common.Interfaces;
 using GLB.TechnicalTest.CBTW.BookSearch.Application.Common.Messaging;
 using GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Books.Models;
+using GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Rankers;
 using GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Rankers.Models;
 using GLB.TechnicalTest.CBTW.BookSearch.Domain.Books;
 using GLB.TechnicalTest.CBTW.BookSearch.Domain.Common.Exceptions.Domain;
@@ -29,7 +30,7 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Books.Queries
             }
             catch (Exception ex) when (ex is not OperationCanceledException)
             {
-                logger.LogWarning("Intent extraction failed; querying with free text directly");
+                logger.LogWarning(ex, "Intent extraction failed; querying with free text directly");
             }
 
             var usedFallback = criteria is null || !criteria.HasStructuredFields;
@@ -42,7 +43,8 @@ namespace GLB.TechnicalTest.CBTW.BookSearch.Application.Specifics.Books.Queries
             if (books.Items.Count == 0 && !usedFallback)
             {
                 logger.LogWarning("Structured search returned empty; retrying as free text");
-                books = await bookCatalog.SearchWorksAsync(BookSearchCriteria.FreeTextCriteria(request.FreeText), request.Page, request.PageSize, cancellationToken);
+                criteria = BookSearchCriteria.FreeTextCriteria(request.FreeText);
+                books = await bookCatalog.SearchWorksAsync(criteria, request.Page, request.PageSize, cancellationToken);
                 usedFallback = true;
             }
 

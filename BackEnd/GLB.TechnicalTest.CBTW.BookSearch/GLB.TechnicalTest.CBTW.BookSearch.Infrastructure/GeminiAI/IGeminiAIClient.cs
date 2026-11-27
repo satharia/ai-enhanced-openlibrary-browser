@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Nodes;
-
-namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI
+﻿namespace GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.GeminiAI
 {
     internal interface IGeminiAIClient
     {

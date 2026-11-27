@@ -2,9 +2,9 @@ import { fileURLToPath } from 'node:url'
 import { mergeConfig, defineConfig, configDefaults } from 'vitest/config'
 import viteConfig from './vite.config.ts'
 
-export default mergeConfig(
-  viteConfig,
-  defineConfig({
+// vite.config.ts exports a function (it reads the env per mode), so it is resolved before merging
+export default defineConfig((configEnv) =>
+  mergeConfig(viteConfig(configEnv), {
     test: {
       environment: 'jsdom',
       exclude: [...configDefaults.exclude, 'e2e/**'],

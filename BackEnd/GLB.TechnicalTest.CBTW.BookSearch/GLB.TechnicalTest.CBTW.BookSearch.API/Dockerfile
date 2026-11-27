@@ -13,6 +13,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["GLB.TechnicalTest.CBTW.BookSearch.API/GLB.TechnicalTest.CBTW.BookSearch.API.csproj", "GLB.TechnicalTest.CBTW.BookSearch.API/"]
+COPY ["GLB.TechnicalTest.CBTW.BookSearch.Application/GLB.TechnicalTest.CBTW.BookSearch.Application.csproj", "GLB.TechnicalTest.CBTW.BookSearch.Application/"]
+COPY ["GLB.TechnicalTest.CBTW.BookSearch.Domain/GLB.TechnicalTest.CBTW.BookSearch.Domain.csproj", "GLB.TechnicalTest.CBTW.BookSearch.Domain/"]
+COPY ["GLB.TechnicalTest.CBTW.BookSearch.Infrastructure/GLB.TechnicalTest.CBTW.BookSearch.Infrastructure.csproj", "GLB.TechnicalTest.CBTW.BookSearch.Infrastructure/"]
 RUN dotnet restore "./GLB.TechnicalTest.CBTW.BookSearch.API/GLB.TechnicalTest.CBTW.BookSearch.API.csproj"
 COPY . .
 WORKDIR "/src/GLB.TechnicalTest.CBTW.BookSearch.API"
